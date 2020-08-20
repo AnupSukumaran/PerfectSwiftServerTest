@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
     
@@ -48,7 +49,13 @@ class ViewController: UIViewController {
         
         webRequest.httpBody = urlParams.data(using: .utf8, allowLossyConversion: true)
         
-        let dataTask = urlSession.dataTask(with: webRequest) { (data, response, error) in
+        //callRequest(req: webRequest)
+        
+        dataSetter(webRequest)
+    }
+    
+    func callRequest(req: URLRequest) {
+        let dataTask = urlSession.dataTask(with: req) { (data, response, error) in
             print("response received from server")
             guard let data = data, let res = response, error == nil else {
                 print("error = \(error!.localizedDescription)")
@@ -73,8 +80,33 @@ class ViewController: UIViewController {
            
         }
         dataTask.resume()
+
     }
     
 
+    func dataSetter( _ req: URLRequest) {
+       
+       AF.request(req).validate().responseJSON { (response) in
+           
+           guard let statusCode = response.response?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                print("error = \(response.error!.localizedDescription)")
+              return
+           }
+           
+           guard let data = response.data else { return }
+           
+           do {
+            
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                print("jsonResponse = \(jsonResponse)")
+                
+                guard let sum = jsonResponse?["sum"] as? Int else {return}
+                self.sumField.text = String(sum)
+           } catch (let error) {
+               print("Error = \(error.localizedDescription)")
+           }
+           
+       }
+    }
 }
 
