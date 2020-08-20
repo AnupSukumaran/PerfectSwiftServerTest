@@ -16,8 +16,8 @@
 		18376ACF24EECB57007A3D4D /* PerfectSwiftServerTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18376ACE24EECB57007A3D4D /* PerfectSwiftServerTestTests.swift */; };
 		18376ADA24EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18376AD924EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift */; };
 		18BC5B1224EED980001830EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18BC5B1124EED980001830EE /* Alamofire */; };
-		18BC5B1524EEDBD8001830EE /* APILib in Frameworks */ = {isa = PBXBuildFile; productRef = 18BC5B1424EEDBD8001830EE /* APILib */; };
 		18BC5B1724EEDC8B001830EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5B1624EEDC8B001830EE /* Constants.swift */; };
+		18BC5B1B24EEDEA6001830EE /* APILib in Frameworks */ = {isa = PBXBuildFile; productRef = 18BC5B1A24EEDEA6001830EE /* APILib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,7 @@
 		18376AD924EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectSwiftServerTestUITests.swift; sourceTree = "<group>"; };
 		18376ADB24EECB57007A3D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18BC5B1624EEDC8B001830EE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18BC5B1824EEDE9E001830EE /* APILib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = APILib; path = ../Frameworks_and_packages/APILib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BC5B1224EED980001830EE /* Alamofire in Frameworks */,
-				18BC5B1524EEDBD8001830EE /* APILib in Frameworks */,
+				18BC5B1B24EEDEA6001830EE /* APILib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,10 +86,12 @@
 		18376AAB24EECB50007A3D4D = {
 			isa = PBXGroup;
 			children = (
+				18BC5B1824EEDE9E001830EE /* APILib */,
 				18376AB624EECB50007A3D4D /* PerfectSwiftServerTest */,
 				18376ACD24EECB57007A3D4D /* PerfectSwiftServerTestTests */,
 				18376AD824EECB57007A3D4D /* PerfectSwiftServerTestUITests */,
 				18376AB524EECB50007A3D4D /* Products */,
+				18BC5B1924EEDEA6001830EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +138,13 @@
 			path = PerfectSwiftServerTestUITests;
 			sourceTree = "<group>";
 		};
+		18BC5B1924EEDEA6001830EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,7 +163,7 @@
 			name = PerfectSwiftServerTest;
 			packageProductDependencies = (
 				18BC5B1124EED980001830EE /* Alamofire */,
-				18BC5B1424EEDBD8001830EE /* APILib */,
+				18BC5B1A24EEDEA6001830EE /* APILib */,
 			);
 			productName = PerfectSwiftServerTest;
 			productReference = 18376AB424EECB50007A3D4D /* PerfectSwiftServerTest.app */;
@@ -229,7 +239,6 @@
 			mainGroup = 18376AAB24EECB50007A3D4D;
 			packageReferences = (
 				18BC5B1024EED980001830EE /* XCRemoteSwiftPackageReference "Alamofire" */,
-				18BC5B1324EEDBD8001830EE /* XCRemoteSwiftPackageReference "APILib" */,
 			);
 			productRefGroup = 18376AB524EECB50007A3D4D /* Products */;
 			projectDirPath = "";
@@ -616,14 +625,6 @@
 				minimumVersion = 5.2.2;
 			};
 		};
-		18BC5B1324EEDBD8001830EE /* XCRemoteSwiftPackageReference "APILib" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AnupSukumaran/APILib.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.6;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -632,9 +633,8 @@
 			package = 18BC5B1024EED980001830EE /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		18BC5B1424EEDBD8001830EE /* APILib */ = {
+		18BC5B1A24EEDEA6001830EE /* APILib */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18BC5B1324EEDBD8001830EE /* XCRemoteSwiftPackageReference "APILib" */;
 			productName = APILib;
 		};
 /* End XCSwiftPackageProductDependency section */
