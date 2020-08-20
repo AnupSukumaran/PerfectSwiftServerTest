@@ -17,6 +17,7 @@
 		18376ADA24EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18376AD924EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift */; };
 		18BC5B1224EED980001830EE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 18BC5B1124EED980001830EE /* Alamofire */; };
 		18BC5B1524EEDBD8001830EE /* APILib in Frameworks */ = {isa = PBXBuildFile; productRef = 18BC5B1424EEDBD8001830EE /* APILib */; };
+		18BC5B1724EEDC8B001830EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC5B1624EEDC8B001830EE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		18376AD524EECB57007A3D4D /* PerfectSwiftServerTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectSwiftServerTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18376AD924EECB57007A3D4D /* PerfectSwiftServerTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfectSwiftServerTestUITests.swift; sourceTree = "<group>"; };
 		18376ADB24EECB57007A3D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BC5B1624EEDC8B001830EE /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				18376AB724EECB50007A3D4D /* AppDelegate.swift */,
 				18376AB924EECB50007A3D4D /* SceneDelegate.swift */,
 				18376ABB24EECB50007A3D4D /* ViewController.swift */,
+				18BC5B1624EEDC8B001830EE /* Constants.swift */,
 				18376ABD24EECB50007A3D4D /* Main.storyboard */,
 				18376AC024EECB57007A3D4D /* Assets.xcassets */,
 				18376AC224EECB57007A3D4D /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 				18376ABC24EECB50007A3D4D /* ViewController.swift in Sources */,
 				18376AB824EECB50007A3D4D /* AppDelegate.swift in Sources */,
 				18376ABA24EECB50007A3D4D /* SceneDelegate.swift in Sources */,
+				18BC5B1724EEDC8B001830EE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

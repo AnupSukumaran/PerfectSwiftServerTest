@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import APILib
 
 class ViewController: UIViewController {
     
@@ -17,6 +18,11 @@ class ViewController: UIViewController {
     
     private let endPoint = "http://localhost:8181/add"
     private let urlSession = URLSession.shared
+    
+    typealias BaseAPI = (scheme: String, host: String, path: String)
+    typealias Header = (headerVal: String, headerKey: String)
+    var apiComponent: BaseAPI = (scheme: .scheme, host: .host, path: .path)
+    public let contentType: Header = (headerVal: .kContentType, headerKey: .vAppJson)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,11 +43,18 @@ class ViewController: UIViewController {
     private func addNumber(numberOne: Int, numberTwo: Int) {
         let parameters = ["operandOne": numberOne, "operandTwo": numberTwo]
         
+        
+        APILib.portNum = 8181
+        let newReq = APILib.makeRequest(method: .post, params: parameters, withHeaders: [contentType], apiComponents: apiComponent)
+        
+        print("newReq-URL = \(newReq.url?.absoluteString)")
+        
         guard let urlToExecute = URL(string: endPoint) else {return}
         
         var webRequest = URLRequest(url: urlToExecute)
         webRequest.httpMethod = "POST"
-        webRequest.addValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        //webRequest.addValue("application/x-www-form-urlencoded; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        webRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let urlParams = parameters.compactMap { (key, value) in
             
             "\(key)=\(value)"
@@ -51,7 +64,8 @@ class ViewController: UIViewController {
         
         //callRequest(req: webRequest)
         
-        dataSetter(webRequest)
+       // dataSetter(webRequest)
+        dataSetter(newReq)
     }
     
     func callRequest(req: URLRequest) {
